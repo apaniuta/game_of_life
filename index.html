@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Game Of Life</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="shortcut icon" href="favicon.png">
+		<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-6">
+								<a class="navbar-brand" href="index.html">Игра «Жизнь» онлайн</a>
+							</div>
+							<div class="col-xs-6">
+								<ul class="nav navbar-nav navbar-right">
+									<li class="active"><a href="http://apaniuta.github.io" target="_blank">Автор</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-4">
+						<form class="form-horizontal">
+							<div class="form-group">
+								<label class="col-xs-9" for="sizeX">Размер вселенной по горизонтали:</label>
+								<div class="col-xs-3">
+									<input class="form-control" id="sizeX" type="number" min="0" max="200" step="5" value="50">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-9" for="sizeY">Размер вселенной по вертикали:</label>
+								<div class="col-xs-3">
+									<input class="form-control" id="sizeY" type="number" min="0" max="200" step="5" value="50">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-9" for="cellSize">Размер клетки:</label>
+								<div class="col-xs-3">
+									<input class="form-control" id="cellSize" type="number" min="0" max="200" step="1" value="10">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-9" for="sizeX">Цвет клетки:</label>
+								<div class="col-xs-3">
+									<input class="form-control" id="color" type="color" value="#000000">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-9" for="sizeX">Скорость эволюции (мс):</label>
+								<div class="col-xs-3">
+									<input class="form-control" id="speed" type="number" value="100">
+								</div>
+							</div>
+						</form>
+						<button class="btn btn-default" id="apply">Применить</button>
+						<p>Реализация знаменитой игры «Жизнь» — клеточного автомата, изобретённого английским математиком Джоном Конвеем.</p>
+						<h4>Правила игры «Жизнь»</h4>
+						<ul>
+							<li>«Жизнь» разыгрывается на бесконечном клеточном поле.</li>
+							<li>У каждой клетки 8 соседних клеток.</li>
+							<li>В каждой клетке может жить существо.</li>
+							<li>Существо с двумя или тремя соседями выживает в следующем поколении, иначе погибает от одиночества или перенаселённости.</li>
+							<li>В пустой клетке с тремя соседями в следующем поколении рождается существо.</li>
+						</ul>
+						<a href="https://ru.wikipedia.org/wiki/%D0%96%D0%B8%D0%B7%D0%BD%D1%8C_(%D0%B8%D0%B3%D1%80%D0%B0)" target="_blank">Подробнее</a>
+					</div>
+					<div class="col-xs-8">
+						<button class="btn btn-default btn-sm" id="start">Старт</button>
+						<button class="btn btn-default btn-sm" id="pause">Пауза</button>
+						<button class="btn btn-default btn-sm" id="one_step">1 Шаг</button>
+						<button class="btn btn-default btn-sm" id="random">Случайно</button>
+						<button class="btn btn-default btn-sm" id="clear">Очистить</button></br>
+						<canvas id="field">Обновите браузер</canvas>
+					</div>
+				</div>
+			</div>
+		</main>
+	
+		<footer id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6">
+						<p>&copy; 2016 <a href="https://apaniuta.github.io" target="_blank">Андрей Панюта</a></p>
+					</div>
+					<div class="col-xs-6">
+						<div class="social_wrap pull-right">
+							<ul class="list-inline">
+								<li><a href="https://vk.com/a.paniuta" target="_blank"><i class="fa fa-vk"></i></a></li>
+								<li><a href="https://facebook.com/a.paniuta" target="_blank"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://github.com/apaniuta/" target="_blank"><i class="fa fa-github"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="js/GameOfLife.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
